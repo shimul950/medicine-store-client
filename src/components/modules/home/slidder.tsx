@@ -65,7 +65,7 @@ export default function HeroCarousel() {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent">
+            <div className="absolute inset-0 bg-gradient from-black/70 via-black/40 to-transparent">
               <div className="h-full max-w-7xl mx-auto px-6 flex items-center">
                 <div className="text-white max-w-xl space-y-4">
                   <h1 className="text-4xl md:text-6xl font-bold">

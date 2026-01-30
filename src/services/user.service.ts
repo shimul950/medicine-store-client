@@ -11,7 +11,8 @@ export const userServices = {
             const res = await fetch("http://localhost:5000/api/auth/get-session", {
                 headers: {
                     Cookie: cookieStore.toString()
-                }
+                },
+                
             })
 
             const session = await res.json()

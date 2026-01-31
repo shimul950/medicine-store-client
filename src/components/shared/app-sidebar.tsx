@@ -18,6 +18,7 @@ const SidebarRail = dynamic(() => import("@/components/ui/sidebar").then(mod => 
 
 import { adminRoutes } from "@/routes/adminRoutes"
 import { userRoutes } from "@/routes/userRoutes"
+import { Role } from "@/constants/roles"
 
 interface AppSidebarProps {
   user: { role: string }
@@ -27,9 +28,9 @@ export function AppSidebar({ user, ...props }: AppSidebarProps & React.Component
  
   const routes: Route[] = React.useMemo(() => {
     switch (user.role) {
-      case "admin":
+      case Role.admin:
         return adminRoutes
-      case "user":
+      case Role.user:
         return userRoutes
       default:
         return []

@@ -1,7 +1,7 @@
 export const userRoutes = [
     {
         title: "Dashboard",
-        url: "/dashBoard",
+        url: "/dashboard",
     },
     {
         title: "Blog Management",

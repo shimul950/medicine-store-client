@@ -2,10 +2,12 @@ import { AppSidebar } from "@/components/shared/app-sidebar";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@radix-ui/react-dropdown-menu";
+import { Role } from "@/constants/roles";
+import { userServices } from "@/services/user.service";
 
-type Role = "admin" | "seller" | "user";
 
-export default function DashBoardLayout({
+
+export default async function DashBoardLayout({
   admin,
   seller,
   user,
@@ -14,38 +16,31 @@ export default function DashBoardLayout({
   seller: React.ReactNode;
   user: React.ReactNode;
 }) {
-  const userRole: { role: Role } = {
-    role: "admin", // replace with session later
-  };
+  const { data } = await userServices.getsession();
+
+  const userInfo = data.user
 
   const dashboards: Record<Role, React.ReactNode> = {
-    admin,
-    seller,
-    user,
+    [Role.admin]: admin,
+    [Role.seller]: seller,
+    [Role.user]: user,
   };
+
 
   return (
     <SidebarProvider>
-      <AppSidebar user={userRole} />
+      <AppSidebar user={userInfo} />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
           {/* <Separatorrd orientation="vertical" className="mr-2 h-4" /> */}
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+
         </header>
 
         <div className="flex flex-1 flex-col gap-4 p-4">
-          {dashboards[userRole.role]}
+          {dashboards[userInfo.role]}
         </div>
+
       </SidebarInset>
     </SidebarProvider>
   );

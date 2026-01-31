@@ -1,11 +1,11 @@
-"use client" // IMPORTANT: make this file client-side only
+"use client" 
 
 import * as React from "react"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Route } from "@/types"
 
-// Import Sidebar components dynamically to avoid SSR issues
+
 const Sidebar = dynamic(() => import("@/components/ui/sidebar").then(mod => mod.Sidebar), { ssr: false })
 const SidebarContent = dynamic(() => import("@/components/ui/sidebar").then(mod => mod.SidebarContent), { ssr: false })
 const SidebarGroup = dynamic(() => import("@/components/ui/sidebar").then(mod => mod.SidebarGroup), { ssr: false })
@@ -24,7 +24,7 @@ interface AppSidebarProps {
 }
 
 export function AppSidebar({ user, ...props }: AppSidebarProps & React.ComponentProps<typeof Sidebar>) {
-  // UseMemo to prevent recalculation on each render
+ 
   const routes: Route[] = React.useMemo(() => {
     switch (user.role) {
       case "admin":

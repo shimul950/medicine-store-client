@@ -64,7 +64,7 @@ const Navbar1 = ({
     },
     {
       title: "Cart",
-      url: "/cart"
+      url: "/dashboard/cart"
 
     },
     {

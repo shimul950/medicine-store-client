@@ -1,16 +1,31 @@
+
 export const userRoutes = [
     {
-        title: "Dashboard",
+        title: "Customer Dashboard",
         url: "/dashboard",
     },
     {
-        title: "Blog Management",
+        title: "Profile Management",
         items: [
             {
-                title: "Create Blog",
-                url: "/create-blog",
-
+                title: "Cart",
+                url: "/dashboard/cart",
             },
+            {
+                title: "Checkout",
+                url: "/dashboard/checkout",
+            },
+            {
+                title: "My Orders",
+                url: "/dashboard/orders",
+            },
+            {
+                title: "Profile",
+                url: "/dashboard/profile",
+            },
+
+
         ]
-    }
-]
+    },
+
+];

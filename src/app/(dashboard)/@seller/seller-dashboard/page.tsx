@@ -1,11 +1,7 @@
 
 
-const page = () => {
-    return (
-        <div>
-            <h1>this is seller DashBoard</h1>
-        </div>
-    );
-};
+import {redirect} from "next/navigation"
 
-export default page;
+export default function sellerDashboard(){
+    return redirect("/seller-dashboard/profile")
+}

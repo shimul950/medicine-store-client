@@ -53,7 +53,7 @@ const ProductCard = ({
   return (
     <div className="h-120 w-full">
       <Card className="p-3 h-full flex flex-col border hover:shadow-lg transition-all duration-300">
-        {/* Product Image */}
+
         <CardHeader className="p-0 aspect-square overflow-hidden rounded-lg relative">
           <Link href={`/api/medicine/${medicine?.id}`}>
             <Image
@@ -66,7 +66,7 @@ const ProductCard = ({
           </Link>
         </CardHeader>
 
-        {/* Product Info */}
+
         <CardContent className="p-0 mt-3 flex-1 space-y-2">
           <Link href={`/api/medicine/${medicine?.id}`}>
             <CardTitle className="font-semibold text-base sm:text-lg line-clamp-2 min-h-[3rem]">
@@ -79,11 +79,10 @@ const ProductCard = ({
           </p>
 
           <div className="font-bold text-lg sm:text-xl mt-2">
-            ৳{Number(medicine?.price ?? 0).toFixed(2)}
+            Tk{Number(medicine?.price ?? 0).toFixed(2)}
           </div>
         </CardContent>
 
-        {/* Card Actions */}
         <CardFooter className="p-0 mt-3 sm:mt-4">
           <div className="flex flex-col gap-2 w-full">
             <div className="flex gap-2 w-full">
@@ -97,14 +96,12 @@ const ProductCard = ({
               </Link>
 
               <Button
-                // disabled={medicine?.stock === 0 || adding}
                 size="sm"
                 className="flex-1 bg-blue-800 hover:bg-primary/90 hover:text-secondary text-primary"
                 onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-4 w-4 sm:mr-2" />
                 <span className="hidden sm:inline">
-                  {/* {adding ? "Adding..." : "Add to Cart"} */}
                   Add to Cart
                 </span>
               </Button>

@@ -1,4 +1,5 @@
 "use client"
+import { redirect } from "next/navigation";
 
 import {
   Card,
@@ -50,7 +51,10 @@ export function LoginForm({ ...props }: React.ComponentProps<typeof Card>) {
       } catch (err) {
         toast.error("Something went wrong, please try again", { id: toastId });
       }
+
+      redirect("/medicines")
     }
+    
   })
 
   const handlelogin = () => {
@@ -58,7 +62,7 @@ export function LoginForm({ ...props }: React.ComponentProps<typeof Card>) {
       provider: "google",
       callbackURL: "http://localhost:3000"
     });
-    console.log(data);
+    redirect("/medicines")
   };
 
   return (

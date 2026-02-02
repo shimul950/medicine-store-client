@@ -1,10 +1,11 @@
 
+
 export const getUserCart = async (userId: string) => {
   try {
     const res = await fetch(
       `${process.env.API_URL}/api/cart/${userId}`,
       {
-        cache: "no-store", // cart must always be fresh
+        cache: "no-store", 
       }
     );
 
@@ -25,7 +26,6 @@ export const getUserCart = async (userId: string) => {
 
 
 export const addToCart = async (userId: string, medicineId: string, quantity :number) => {
-  console.log(userId, medicineId);
   try {
     const res = await fetch(`${process.env.API_URL}/api/cart/${userId}/add`, {
       method: "POST",

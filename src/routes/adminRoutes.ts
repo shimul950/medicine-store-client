@@ -1,3 +1,5 @@
+
+
 export const adminRoutes = [
     {
         title: "Dashboard",
@@ -7,10 +9,18 @@ export const adminRoutes = [
         title: "User Management",
         items: [
             {
-                title: "Analytics",
-                url: "/analytics",
+                title: "Profile",
+                url: "/admin-dashboard/profile",
 
             },
+            {
+                title:"Create Category",
+                url:"/admin-dashboard/createCategory"
+            },
+            {
+                title:"Get All user",
+                url:"/admin-dashboard/getAllUser"
+            }
         ]
     }
 ]

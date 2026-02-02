@@ -7,10 +7,14 @@ export const sellerRoutes = [
         title: "Medicine Management",
         items: [
             {
-                title: "Analytics",
-                url: "/analytics",
+                title: "Add Medicine",
+                url: "/seller-dashboard/addMedicine",
 
             },
+            {
+                title: "Profile",
+                url: "/seller-dashboard/profile",
+            }
         ]
     }
 ]

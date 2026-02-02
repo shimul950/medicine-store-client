@@ -1,7 +1,6 @@
-export default function AdminDashboard(){
-    return(
-        <div>
-            <h1>this is admin DashBoard</h1>
-        </div>
-    )
+
+import {redirect} from "next/navigation"
+
+export default function adminDashboard(){
+    return redirect("/admin-dashboard/profile")
 }

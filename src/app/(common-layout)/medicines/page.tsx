@@ -3,11 +3,8 @@ import { getAllMedicines } from "@/services/product.service";
 import { userServices } from "@/services/user.service";
 import { MedicineInput } from "@/types/medicine.input";
 
-interface MedicinePageProps {
-  userId: string; // pass userId as prop
-}
 
-const MedicinePage = async ({ userId }: MedicinePageProps) => {
+const MedicinePage = async (userId: string) => {
   await new Promise((resolve) => setTimeout(resolve, 2000))
 
   const { data } = await getAllMedicines();

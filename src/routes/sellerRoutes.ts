@@ -14,6 +14,10 @@ export const sellerRoutes = [
             {
                 title: "Profile",
                 url: "/seller-dashboard/profile",
+            },
+            {
+                title:"History",
+                url:"/seller-dashboard/history"
             }
         ]
     }

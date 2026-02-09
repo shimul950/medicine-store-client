@@ -18,37 +18,13 @@ import { addToCart } from "@/services/cart.service";
 
 
 const ProductCard = ({
-  medicine,
-  userId
+  medicine
 }: {
   medicine: MedicineInput;
-  userId: string
+
 }) => {
   
-
-
-  const handleAddToCart =  () => {
-    if (!userId) {
-      alert("Please login to add to cart");
-      return;
-    }
-
-    const result =  addToCart(userId, medicine.id, 1);
-    // try {
-    //   setAdding(true);
-    //   const result =  addToCart(userId, medicine.id, 1);
-
-    //   if (result?.error) {
-    //     alert(result.error.message);
-    //   } else {
-    //     alert(`${medicine.name} added to cart!`);
-    //   }
-    // } catch (err) {
-    //   alert("Failed to add to cart");
-    // } finally {
-    //   setAdding(false);
-    // }
-  };
+  console.log(medicine);
 
   return (
     <div className="h-120 w-full">
@@ -98,7 +74,6 @@ const ProductCard = ({
               <Button
                 size="sm"
                 className="flex-1 bg-blue-800 hover:bg-primary/90 hover:text-secondary text-primary"
-                onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-4 w-4 sm:mr-2" />
                 <span className="hidden sm:inline">
@@ -111,6 +86,6 @@ const ProductCard = ({
       </Card>
     </div>
   );
-};
 
+}
 export default ProductCard;

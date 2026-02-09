@@ -1,9 +1,14 @@
+import HistoryTable from "@/components/modules/seller-module/createHistory";
+import { getAllMedicines } from "@/services/product.service";
 
 
-const HistoryPage = () => {
+const HistoryPage = async() => {
+    const res = await getAllMedicines();
+    const medicines = res.data || [];
+
     return (
         <div>
-            <h1>this is history page</h1>
+            <HistoryTable medicines={medicines}/>
         </div>
     );
 };
